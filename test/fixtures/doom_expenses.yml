@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item: MyString
+  income: 1
+  expense: 1
+  total: 1
+  note: MyText
+  delete_at: 2016-07-12 18:36:03
+
+two:
+  item: MyString
+  income: 1
+  expense: 1
+  total: 1
+  note: MyText
+  delete_at: 2016-07-12 18:36:03
