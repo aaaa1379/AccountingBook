@@ -1,0 +1,20 @@
+.columns
+  .four-fifths.column.centered
+    %h1 新增 New ヽ(✿ﾟ▽ﾟ)ノ
+
+- if notice
+  .flash-messages.flash
+    .columns
+      .four-fifths.column.centered= notice
+
+.columns
+  .four-fifths.column.centered
+    .columns
+      .three-fourths.column
+        - if @doom_expense
+          = form_for(@doom_expense, url: doom_expenses_path, method: 'post') do |f|
+            .btn_pad
+              = f.submit 'Create', :class => 'btn btn-primary ml-3'
+              = link_to(doom_expenses_path) do
+                %span.btn.ml-3.left Back
+            = render :partial => 'form', locals: {f:f}

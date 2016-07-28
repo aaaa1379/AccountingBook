@@ -1,0 +1,50 @@
+%dl.form-group.errored
+  %dt
+    %label
+      項目 Item
+      %span.red-text *
+  %dd= f.text_field :item
+  %dd.error
+    - msgs = @doom_expense.errors.messages[:item]
+    - if not msgs.blank?
+      .flash.flash-error
+        - msgs.each do |message|
+          = message
+
+%dl.form-group.errored
+  %dt
+    %label
+      收入 Income
+      %span.red-text *
+  %dd= f.number_field :income, :min => 0
+  %dd.error
+    - msgs = @doom_expense.errors.messages[:income]
+    - if not msgs.blank?
+      .flash.flash-error
+        - msgs.each do |message|
+          = message
+
+%dl.form-group.errored
+  %dt
+    %label
+      支出 Expense
+      %span.red-text *
+  %dd= f.number_field :expense, :min => 0
+  %dd.error
+    - msgs = @doom_expense.errors.messages[:expense]
+    - if not msgs.blank?
+      .flash.flash-error
+        - msgs.each do |message|
+          = message
+
+%dl.form-group.errored
+  %dt
+    %label
+      備註 Note
+  %dd= f.text_area :note
+  %dd.error
+    - msgs = @doom_expense.errors.messages[:note]
+    - if not msgs.blank?
+      .flash.flash-error
+        - msgs.each do |message|
+          = message

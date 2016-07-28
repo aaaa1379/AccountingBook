@@ -1,0 +1,24 @@
+.columns
+  .four-fifths.column.centered
+    %h1 編輯 Edit ヽ(✿ﾟ▽ﾟ)ノ
+- if notice
+  .flash-messages.flash
+    .columns
+      .four-fifths.column.centered= notice
+
+.columns
+  .four-fifths.column.centered
+    .columns
+      .three-fourths.column
+        - if @doom_expense
+          = form_for(@doom_expense, url: doom_expense_path(@doom_expense), method: 'patch') do |f|
+            .btn_pad
+              = f.submit 'Update', :class => 'btn btn-primary ml-3'
+              = link_to(doom_expenses_path) do
+                %span.btn.ml-3.left Back
+              = link_to @doom_expense, method: :delete, data: { confirm: 'Are you sure?' } do
+                %span.btn.btn-danger.left.ml-3 Delete
+            = render :partial => 'edit', locals: {f:f}
+
+        - else
+          %h1 ヽ(✿ﾟ▽ﾟ)ノ

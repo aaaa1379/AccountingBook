@@ -1,0 +1,31 @@
+%table
+  %col{width: '20%'}/
+  %col{width: '80%'}/
+  %tbody
+    %tr
+      %td 項目 Item
+      %td= @doom_expense.item
+    %tr
+      %td 收入 Income
+      %td= @doom_expense.income
+    %tr
+      %td 支出 Expense
+      %td= @doom_expense.expense
+    %tr
+      %td 餘額 Remain
+      %td= @doom_expense.total
+    %tr
+      %td 備註 Note
+      %td= @doom_expense.note
+
+%dl.form-group.errored
+  %dt
+    %label
+      備註 Note
+  %dd= f.text_area :note
+  %dd.error
+    - msgs = @doom_expense.errors.messages[:note]
+    - if not msgs.blank?
+      .flash.flash-error
+        - msgs.each do |message|
+          = message

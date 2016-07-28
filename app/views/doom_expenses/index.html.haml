@@ -1,0 +1,30 @@
+.columns
+  .four-fifths.column.centered
+    %h1
+      記帳本 Accounting Book ヽ(✿ﾟ▽ﾟ)ノ
+      %span.right
+        = @total ? @total : '0'
+- if notice
+  .flash-messages.flash
+    .columns
+      .four-fifths.column.centered= notice
+
+.columns
+  .four-fifths.column.centered
+    .columns
+      .three-fourths.column
+        = link_to new_doom_expense_path do
+          .btn_pad
+            .btn.btn-primary.ml-3 New
+
+        = render :partial => 'index', locals: {params_dooms: @doom_expenses}
+
+-# .one-fourth.column
+-#   %ul.filter-list
+-#     %li
+-#       = link_to(doom_expenses_path(), class: 'filter-item') do
+-#         %span.count
+-#         = @doom_expenses.first.created_at.year
+-#         = @doom_expenses.first.created_at.month
+-#         = @doom_expenses.first.created_at.localtime.strftime('%z')
+-#         All

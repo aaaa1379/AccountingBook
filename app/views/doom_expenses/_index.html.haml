@@ -1,0 +1,52 @@
+-# params_dooms: @doom_expenses
+
+
+%table
+  %col{width: "20%"}/
+  %col{width: "40%"}/
+  %thead
+    %tr
+      %th 建立時間 Created Time
+      %th 項目 Item
+      %th 收入 Income
+      %th 支出 Expense
+      %th 餘額 Remain
+  %tbody
+    - params_dooms.each do |doom|
+      - created_at = doom.created_at.localtime.strftime("%Y/%m/%d %H:%M:%S")
+      - item       = doom.item
+      - income     = "%.5d" % doom.income
+      - expense    = "%.5d" % doom.expense
+      - total      = "%.5d" % doom.total
+      - income     = doom.income
+      - expense    = doom.expense
+      - total      = doom.total
+      - note       = doom.note
+
+      - if doom.delete_at.blank?
+        %tr
+          %td= created_at
+          %td
+            %a{href: edit_doom_expense_path(doom)}
+              %span.left=item
+            - if not note.blank?
+              %span.pl-0= " - #{note}"
+          %td
+            %span.right= (income != 0) ? income : '-'
+          %td
+            %span.right= (expense != 0) ? expense : '-'
+          %td
+            %span.right= total
+      - else
+        %tr.delete-text
+          %td= created_at
+          %td
+            %span.left= item
+            - if not note.blank?
+              %span.pl-0= " - #{note}"
+          %td
+            %span.right= (income != 0) ? income : '-'
+          %td
+            %span.right= (expense != 0) ? expense : '-'
+          %td
+            %span.right= total

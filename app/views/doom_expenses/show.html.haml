@@ -1,0 +1,26 @@
+%p#notice= notice
+%table
+  %tbody
+    %tr
+      %td 項目:
+      %td= @doom_expense.item
+    %tr
+      %td 收入:
+      %td= @doom_expense.income
+    %tr
+      %td 支出:
+      %td= @doom_expense.expense
+    %tr
+      %td 餘額:
+      %td= @doom_expense.total
+    %tr
+      %td 備註:
+      %td= (@doom_expense.note.blank?) ? '-' : @doom_expense.note
+    %tr
+      %td 更新時間:
+      %td= @doom_expense.updated_at.localtime
+    %tr
+      %td 刪除時間:
+      %td= (@doom_expense.delete_at.blank?) ? '-' : @doom_expense.delete_at.localtime
+= link_to 'Edit', edit_doom_expense_path(@doom_expense)
+= link_to 'Back', doom_expenses_path

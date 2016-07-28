@@ -1,0 +1,2 @@
+module DoomExpensesHelper
+end
