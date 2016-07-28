@@ -4,3 +4,5 @@ rvm: 2.2.0
 deploy:
   provider: heroku
   buildpack: ruby
+  api_key:
+    secure: ${CI_API_KEY}
