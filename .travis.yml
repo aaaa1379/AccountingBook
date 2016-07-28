@@ -5,4 +5,4 @@ deploy:
   provider: heroku
   buildpack: ruby
   api_key:
-    secure: ${CI_API_KEY}
+    secure: <%= ENV['CI_API_KEY'] %>
