@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/aaaa1379/AccountingBook.svg?branch=master)](https://travis-ci.org/aaaa1379/AccountingBook)
+[![Build Status](https://travis-ci.org/akiicat/AccountingBook.svg?branch=master)](https://travis-ci.org/akiicat/AccountingBook)
 
 # AccountingBook
 A online basic accounting book
