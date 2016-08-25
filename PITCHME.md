@@ -4,7 +4,7 @@ Hello, World!
 
 
 # Accounting Book
-Just testing that gitpitch doing.
+Just testing what the gitpitch doing.
 
 - testing
 
