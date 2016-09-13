@@ -3,5 +3,5 @@
 # AccountingBook
 A online basic accounting book
 
-- Testing ROR Test::Unit and Rspec
+- Testing UnitTest
 - Testing Travis CI
