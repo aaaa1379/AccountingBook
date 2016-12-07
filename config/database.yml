@@ -7,5 +7,7 @@ development:
   pool: 5
 
 test:
-  url: <%= ENV['DATABASE_URL_TEST'] %>
+  adapter: sqlite3
   pool: 5
+  timeout: 5000
+  database: db/test.sqlite3
